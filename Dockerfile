@@ -19,7 +19,7 @@ RUN cd /app && apt-get source nginx; \
     cd /app/nginx-* && patch -p1 < ../ngx_http_proxy_connect_module/proxy_connect.patch; \
     cd /app/nginx-* && ./configure --add-module=/app/ngx_http_proxy_connect_module && make && make install;
 
-ADD nginx_whitelist.conf /usr/local/nginx/conf/nginx.conf
+ADD nginx_allow_all.conf /usr/local/nginx/conf/nginx.conf
 
 EXPOSE 8888
 
